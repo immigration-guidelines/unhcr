@@ -1,9 +1,9 @@
-# Immigration guidance: UNHCR
+# UNHCR: country guidance for asylum decision-makers
 
-Published guidance that the authorities of UNHCR issue to the officials who decide immigration cases, collected in November 2026.
+UNHCR's country-specific guidance for the officials who decide asylum claims: Eligibility Guidelines, International Protection Considerations, Guidance Notes on international protection needs, Positions on Returns and return advisories, and older position papers and cessation notes. 143 files, September 2001 to June 2026, all in English.
 
-- **Guidance:** 146 files in this folder. `index.tsv` lists each file with its title, date and source address.
-- The files are unmodified copies of what the source published. Where a source refused automated access, copies come from a public web archive; the index says which.
-- What is missing, and how to obtain it, is described in `MISSING.md` in the main `immigration-guidelines` repository, which also holds the download scripts.
+The copies come from [ecoi.net](https://www.ecoi.net) (Austrian Red Cross / ACCORD), which keeps the files as UNHCR published them; `index.tsv` gives each file's ecoi.net address and document page. `NOTES.txt` describes what was checked.
 
-The documents remain the work of the authorities that published them.
+UNHCR's general guidelines on international protection and its handbook on procedures are not included here. Other jurisdictions are listed on the [organisation page](https://github.com/immigration-guidelines), and the download script is in the [scripts repository](https://github.com/immigration-guidelines/.github).
+
+The documents remain the work of UNHCR.
