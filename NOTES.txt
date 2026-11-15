@@ -1,0 +1,74 @@
+UNHCR - guidance to refugee-status decision-makers (unhcr/)
+==========================================================
+
+Script: /home/brinly/immigration-guidelines/download_unhcr.py
+Re-run: cd /home/brinly/immigration-guidelines && python3 download_unhcr.py   (or: country)
+
+What was obtained
+-----------------
+country/  143 files (142 PDF, 1 Word .doc), about 95 MB, dated September 2001 to June 2026, all
+          kind = guidance, English only: UNHCR's country-specific guidance for asylum
+          adjudicators - Eligibility Guidelines (26; Afghanistan 2007-2018, Iraq 2007-2012, Eritrea
+          2009/2011, Sri Lanka 2009-2012, Somalia 2010, Colombia 2010/2015, Pakistan religious
+          minorities 2012/2017, El Salvador, Honduras, Guatemala, Kosovo, Cote d'Ivoire ...),
+          International Protection Considerations (34; Syria Updates I-VI and 2026, Iraq 2019/2024,
+          Ukraine 2014-2015, northeastern Nigeria, Somalia, Haiti, Colombia, Nicaragua, Libya 2011 ...),
+          Guidance Notes on international protection needs (9; Afghanistan 2022/2023/2025, Venezuela,
+          Nicaragua, Myanmar, Sudan, Guinea, Eritrea 2026), Positions on Returns / return advisories
+          (43), and 31 older position papers, protection-needs updates, cessation and internal-flight
+          notes (Kosovo 2001-2006, Iraq 2003-2005, Chechnya, Darfur, Liberia, Togo, Sierra Leone
+          cessation, Mogadishu IFA, Afghanistan security updates 2008 ...).
+          File names: date_title_<ecoi.net id>. `date` is the publication date ecoi.net records.
+
+Source used: www.ecoi.net (run by the Austrian Red Cross / ACCORD; robots.txt allows everything for
+`*`). ecoi.net keeps unmodified copies of the files UNHCR published, at
+https://www.ecoi.net/en/file/local/<id>/<file name>; index.tsv gives that address (source_url) and
+the ecoi.net document page (ecoi_page). Listing: ecoi.net search, source 11525 (UNHCR), document type
+11597 ("Expert Opinion or Position"), language English, plus title searches (Eligibility Guidelines,
+International Protection Considerations / Needs, Position on Return(s), Guidance Note, Return
+Advisory, Protection Considerations) - 344 UNHCR items, of which the country-guidance families were
+kept by title (THE_RE / NOT_RE in the script: comments on draft laws, observations, court
+submissions, statements, evaluations, news releases and positions on transfers to EU states are
+left out). UNHCR documents carry the usual UNHCR notice (reproduction authorised for
+non-commercial purposes with acknowledgement); no confidentiality notice was found in the first
+pages of any file.
+
+What was NOT obtained, and why (see not-obtained.tsv, 42 rows)
+--------------------------------------------------------------
+29 thematic instruments, none fetched:
+  Handbook on Procedures and Criteria for Determining Refugee Status (1979, 1992, 2011, 2019),
+  Guidelines on International Protection Nos 1-13 (2002-2017), Procedural Standards for RSD under
+  UNHCR's Mandate (2003 and 2020), the Resettlement Handbook (2011 and earlier editions, country
+  chapters), the Handbook on Protection of Stateless Persons (2014), Guidelines on Statelessness
+  Nos 1-5, the Detention Guidelines (1999 revised guidelines and 2012).
+  Reason:
+  - www.unhcr.org: robots.txt read (allows /media/ and /sites/default/files/); after 15 sitemap
+    pages the 16th request got HTTP 429 - host closed for the task.
+  - www.refworld.org: robots.txt itself answered with a Cloudflare JavaScript challenge ("Just a
+    moment...") - host closed.
+  - web.archive.org (no robots.txt, HTTP 404): CDX lists of the unhcr.org /media/ pages and of
+    Refworld's legal-guidance, country-position and operational-guidance pages were obtained
+    (scratch only), then the Archive refused three connections in a row (after several 503/504
+    answers) before any document was fetched - given up as the brief requires.
+  - data.unhcr.org (UNHCR Operational Data Portal): "Search is temporarily unavailable to automated
+    clients" (HTTP 503) - closed.
+  - ecoi.net carries none of these thematic documents (searched by title).
+  - Common Crawl: the robots.txt read by the earlier agent disallows everything for `*`. api.reliefweb.int: robots.txt disallows
+    everything; reliefweb.int search pages are disallowed.
+13 country items that ecoi.net only links to other sites (old unhcr.org / refworld / unhcr.ba /
+  unhcr.ch / reliefweb addresses, 1999-2006) - those sites were not used.
+
+Assessment
+----------
+UNHCR publishes a large body of real guidance for decision-makers: the Handbook and the Guidelines
+on International Protection are the standard interpretive texts applied by asylum authorities and
+courts, the Procedural Standards are the working manual for UNHCR's own mandate RSD, and the
+country Eligibility Guidelines / International Protection Considerations are written expressly for
+adjudicators. This folder now holds the country-guidance series (fairly completely for 2002-2026 in
+English, as far as ecoi.net has it), but none of the thematic instruments, because every host that
+serves them refused this machine. They should be added from a browser or another network
+(addresses in not-obtained.tsv).
+
+History: the earlier agent read robots.txt of www.unhcr.org and refworld (challenge), saved the
+unhcr.org sitemap index and a Wayback CDX list of Refworld operational-guidance pages, and wrote no
+files here. This second agent did everything in this folder.
